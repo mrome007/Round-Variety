@@ -35,6 +35,7 @@ public class PlayerMovementOnSphere : MonoBehaviour
         var v = Input.GetAxis("Vertical");
 
         MoveOnSphere(h, v);
+        transform.LookAt(Vector3.zero);
     }
 
     private void MoveOnSphere(float horizontalAngle, float verticalAngle)
