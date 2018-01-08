@@ -35,7 +35,6 @@ public class PlayerMovementOnSphere : MonoBehaviour
         var v = Input.GetAxis("Vertical");
 
         MoveOnSphere(h, v);
-        transform.LookAt(Vector3.zero);
     }
 
     private void MoveOnSphere(float horizontalAngle, float verticalAngle)
@@ -51,6 +50,7 @@ public class PlayerMovementOnSphere : MonoBehaviour
         var z = radius * Mathf.Cos(elevation) * Mathf.Sin(azimuth);
 
         transform.position = new Vector3(x, y, z);
+        transform.LookAt(Vector3.zero);
     }
 
     private float ClampAngle(float angle)
