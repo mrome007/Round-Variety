@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovementOnSphere : MonoBehaviour 
-{
+public class FollowPlayerMovementOnSphere : MonoBehaviour 
+{   
     [SerializeField]
     private float speed;
 
@@ -13,6 +13,9 @@ public class PlayerMovementOnSphere : MonoBehaviour
     [SerializeField]
     private float playerSizeOffset;
 
+    [SerializeField]
+    private Transform player;
+
     private float azimuth;
     private float elevation;
     private float movementVector;
@@ -20,16 +23,20 @@ public class PlayerMovementOnSphere : MonoBehaviour
     private void Awake()
     {
         radius += playerSizeOffset;
-        azimuth = 0f;
-        elevation = 0f;
+        azimuth = Random.Range(0f, 2f * Mathf.PI);
+        elevation = Random.Range(0f, 2f * Mathf.PI);
+    }
+
+    private void Start()
+    {
+
     }
 
     private void Update()
     {
-        var h = Input.GetAxis("Horizontal");
-        var v = Input.GetAxis("Vertical");
+        var target = player.transform.position - transform.position;
 
-        MoveOnSphere(h, v);
+        MoveOnSphere(target.normalized.x, target.normalized.y);
     }
 
     private void MoveOnSphere(float horizontalAngle, float verticalAngle)
@@ -56,5 +63,5 @@ public class PlayerMovementOnSphere : MonoBehaviour
         }
 
         return angle;
-    }
+    }    
 }
