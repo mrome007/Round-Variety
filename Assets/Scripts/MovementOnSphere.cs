@@ -13,6 +13,9 @@ public abstract class MovementOnSphere : MonoBehaviour
     [SerializeField]
     protected float playerSizeOffset;
 
+    [SerializeField]
+    private Transform target;
+
     protected float azimuth;
     protected float elevation;
     protected float movementVector;
@@ -42,7 +45,8 @@ public abstract class MovementOnSphere : MonoBehaviour
         var z = radius * Mathf.Cos(elevation) * Mathf.Sin(azimuth);
 
         transform.position = new Vector3(x, y, z);
-        transform.LookAt(Vector3.zero);
+        transform.LookAt(target.transform.position, transform.up);
+
     }
 
     protected virtual float ClampAngle(float angle)
