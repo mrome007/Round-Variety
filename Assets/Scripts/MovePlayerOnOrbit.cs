@@ -35,8 +35,9 @@ public class MovePlayerOnOrbit : MonoBehaviour
     private void Update()
     {
         var h = Input.GetAxis("Horizontal");
+        var v = Input.GetAxis("Vertical");
 
-        ChangeHorizontalRadius();
+        ChangeHorizontalRadius(v);
         MoveOnOrbit(h);
     }
 
@@ -61,21 +62,21 @@ public class MovePlayerOnOrbit : MonoBehaviour
         transform.position = position;
     }
 
-    private void ChangeHorizontalRadius()
+    private void ChangeHorizontalRadius(float ver)
     {
-        if(Input.GetKey(KeyCode.J))
-        {
-            if(horizontalRadius < radius * 3f)
-            {
-                horizontalRadius += 0.1f;
-            }
-        }
-
-        if(Input.GetKey(KeyCode.K))
+        if(ver < 0f)
         {
             if(horizontalRadius > radius)
             {
                 horizontalRadius -= 0.1f;
+            }
+        }
+
+        if(ver > 0f)
+        {
+            if(horizontalRadius < 3f * radius)
+            {
+                horizontalRadius += 0.1f;
             }
         }
     }
