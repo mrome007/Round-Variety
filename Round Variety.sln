@@ -18,6 +18,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
 		$1.FileWidth = 120
@@ -56,10 +57,6 @@ Global
 		$2.SpacesBeforeBrackets = False
 		$2.BlankLinesBetweenFields = 1
 		$2.BlankLinesBetweenEventFields = 1
-		$2.MethodCallArgumentWrapping = DoNotWrap
-		$2.MethodDeclarationParameterWrapping = DoNotWrap
-		$2.IndexerDeclarationParameterWrapping = DoNotWrap
-		$2.IndexerArgumentWrapping = DoNotWrap
 		$2.inheritsSet = Mono
 		$2.inheritsScope = text/x-csharp
 		$2.scope = text/x-csharp
