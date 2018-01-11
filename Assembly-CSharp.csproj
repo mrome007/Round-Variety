@@ -53,6 +53,8 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\DamageCollision.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
+     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
+     <Compile Include="Assets\Scripts\EnemyWaveController.cs" />
      <Compile Include="Assets\Scripts\KamikazeEnemy.cs" />
      <Compile Include="Assets\Scripts\MovePlayerOnOrbit.cs" />
      <Compile Include="Assets\Scripts\PlayerFireProjectile.cs" />

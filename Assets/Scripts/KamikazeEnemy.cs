@@ -15,6 +15,13 @@ public class KamikazeEnemy : Enemy
         SpawnEnemy();
     }
 
+    public override void SpawnEnemy()
+    {
+        base.SpawnEnemy();
+
+        transform.LookAt(Vector3.zero);
+    }
+
     private void Update()
     {
         if(delayBeforeAttack > 0f)
@@ -23,7 +30,7 @@ public class KamikazeEnemy : Enemy
             return;
         }
 
-        transform.Translate(transform.forward * speed * Time.deltaTime);
+        transform.position += transform.forward * speed * Time.deltaTime;
     }
 
     private void OnDestroy()

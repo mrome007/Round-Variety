@@ -121,8 +121,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 261434641}
+  - component: {fileID: 261434642}
+  - component: {fileID: 261434643}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Enemies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -141,6 +143,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &261434642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 261434640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c6bc22ddf458494faa0651b020008e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WaveRounds:
+  - EnemyWaves:
+    - EnemyType: 0
+      NumberOfEnemies: 5
+      WaveDelay: 0
+      TimeBetweenSpawn: 2
+--- !u!114 &261434643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 261434640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 142b8802f666f4c1ca2f716a9246eb38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyObjects:
+  - {fileID: 114551114042251822, guid: 155319b21d5474659b076f77e242dae7, type: 2}
 --- !u!1 &742079180
 GameObject:
   m_ObjectHideFlags: 0
