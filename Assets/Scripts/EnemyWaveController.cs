@@ -95,6 +95,7 @@ public enum EnemyType
 [Serializable]
 public class WaveRound
 {
+    public string Name;
     public List<EnemyWave> EnemyWaves;
     public float RoundBeginDelay;
 }
