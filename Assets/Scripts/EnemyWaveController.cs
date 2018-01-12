@@ -9,20 +9,81 @@ public class EnemyWaveController : MonoBehaviour
     [SerializeField]
     private List<WaveRound> WaveRounds;
 
-    private void Start()
+    private Dictionary<int, Enemy> enemiesInWave;
+    private static int enemyIdCounter;
+    private int enemyInRoundCount;
+    private int currentRound;
+
+    private void Awake()
     {
-        StartCoroutine(StartWave());
+        enemyIdCounter = 0;
+        enemyInRoundCount = 0;
+        currentRound = 0;
+        enemiesInWave = new Dictionary<int, Enemy>();
     }
 
-    private IEnumerator StartWave()
+    private void Start()
     {
-        var wave = WaveRounds.FirstOrDefault();
-        var enemies = EnemySpawner.Instance.SpawnEnemy(wave.EnemyWaves[0].NumberOfEnemies, EnemyType.Kamikaze, new Vector3(0f, -10f, 0f), Quaternion.identity);
-        foreach(var enemy in enemies)
+        StartEnemies(WaveRounds[currentRound++]);
+    }
+
+    private void StartEnemies(WaveRound round)
+    {
+        StartCoroutine(StartRound(round));
+    }
+
+    private IEnumerator StartRound(WaveRound round)
+    {
+        yield return new WaitForSeconds(round.RoundBeginDelay);
+
+        for(int index = 0; index < round.EnemyWaves.Count; index++)
         {
-            yield return new WaitForSeconds(wave.EnemyWaves[0].TimeBetweenSpawn);
+            var wave = round.EnemyWaves[index];
+            enemyInRoundCount += wave.NumberOfEnemies;
+        }
+        
+        for(int index = 0; index < round.EnemyWaves.Count; index++)
+        {
+            var wave = round.EnemyWaves[index];
+            StartCoroutine(StartWave(wave));
         }
     }
+
+    private IEnumerator StartWave(EnemyWave wave)
+    {
+        yield return new WaitForSeconds(wave.WaveDelay);
+        var enemies = EnemySpawner.Instance.SpawnEnemy(wave.NumberOfEnemies, wave.EnemyType, wave.wavePosition.position, Quaternion.identity);
+        foreach(var enemy in enemies)
+        {
+            enemy.EnemyId = enemyIdCounter;
+            enemiesInWave.Add(enemyIdCounter++, enemy);
+            enemy.EnemyDeath += HandleEnemyDeath;
+            yield return new WaitForSeconds(wave.TimeBetweenSpawn);
+        }
+    }
+
+
+    private void HandleEnemyDeath(object sender, EnemyDeathEventArgs e)
+    {
+        var enemy = enemiesInWave[e.EnemyId];
+        enemy.EnemyDeath -= HandleEnemyDeath;
+
+        enemiesInWave.Remove(e.EnemyId);
+        enemyInRoundCount--;
+
+        if(enemyInRoundCount == 0)
+        {
+            Debug.Log("Round End");
+            currentRound++;
+            if(currentRound < WaveRounds.Count)
+            {
+                StartEnemies(WaveRounds[currentRound]);
+                enemyIdCounter = 0;
+                enemiesInWave.Clear();
+            }
+        }
+    }
+
 }
 
 public enum EnemyType
@@ -35,6 +96,7 @@ public enum EnemyType
 public class WaveRound
 {
     public List<EnemyWave> EnemyWaves;
+    public float RoundBeginDelay;
 }
 
 [Serializable]
@@ -44,4 +106,5 @@ public class EnemyWave
     public int NumberOfEnemies;
     public float WaveDelay;
     public float TimeBetweenSpawn;
+    public Transform wavePosition;
 }

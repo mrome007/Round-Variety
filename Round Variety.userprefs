@@ -1,8 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Projectile.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EnemyWaveController.cs">
     <Files>
-      <File FileName="Assets/Scripts/Projectile.cs" Line="10" Column="33" />
+      <File FileName="Assets/Scripts/DamageCollision.cs" Line="11" Column="39" />
+      <File FileName="Assets/Scripts/EnemyWaveController.cs" Line="18" Column="6" />
+      <File FileName="Assets/Scripts/EnemySpawner.cs" Line="33" Column="31" />
+      <File FileName="Assets/Scripts/Enemy.cs" Line="6" Column="44" />
+      <File FileName="Assets/Scripts/KamikazeEnemy.cs" Line="33" Column="74" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

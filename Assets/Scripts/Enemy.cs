@@ -6,7 +6,9 @@ using UnityEngine;
 public abstract class Enemy : MonoBehaviour
 {
     public event EventHandler EnemySpawned;
-    public event EventHandler EnemyDeath;
+    public event EventHandler<EnemyDeathEventArgs> EnemyDeath;
+
+    public int EnemyId { get; set; }
 
     public virtual void SpawnEnemy()
     {
@@ -22,7 +24,7 @@ public abstract class Enemy : MonoBehaviour
         var handler = EnemyDeath;
         if(handler != null)
         {
-            handler(this, null);
+            handler(this, new EnemyDeathEventArgs(EnemyId));
         }
     }
 }
