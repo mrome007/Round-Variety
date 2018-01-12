@@ -786,8 +786,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 4
   sizeOffset: 1
-  speed: 2
-  idleSpeed: 10
+  speed: 3
+  idleSpeed: 20
   idleIncrment: 0.05
 --- !u!4 &1998458984
 Transform:
