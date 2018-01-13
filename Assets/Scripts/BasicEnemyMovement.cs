@@ -76,7 +76,7 @@ public class BasicEnemyMovement : EnemyMovement
         position.x = x;
         position.y = y;
 
-        transform.LookAt(position);
+        transform.LookAt(position, y < 0f ? Vector3.down : Vector3.up);
         transform.position = position;
     }
 
