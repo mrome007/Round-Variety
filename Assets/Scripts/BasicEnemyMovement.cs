@@ -101,9 +101,9 @@ public class BasicEnemyMovement : EnemyMovement
     {
         var uVector = transform.position;
         var vVector = Vector3.right;
-        
-        var cosTheta = (Vector3.Dot(uVector, vVector) / (uVector.magnitude * vVector.magnitude));
-        var angle = Mathf.Acos(cosTheta);
+
+        var angle = Mathf.Atan2(uVector.y - vVector.y, uVector.x - vVector.x);
+
         return angle;
     }
 }

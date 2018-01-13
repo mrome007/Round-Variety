@@ -186,10 +186,20 @@ MonoBehaviour:
   - Name: Round 1 - Basic
     EnemyWaves:
     - EnemyType: 0
-      NumberOfEnemies: 1
+      NumberOfEnemies: 5
       WaveDelay: 0
       TimeBetweenSpawn: 1.5
       wavePosition: {fileID: 1846546384}
+    - EnemyType: 0
+      NumberOfEnemies: 6
+      WaveDelay: 6
+      TimeBetweenSpawn: 1.5
+      wavePosition: {fileID: 993887510}
+    - EnemyType: 0
+      NumberOfEnemies: 8
+      WaveDelay: 7
+      TimeBetweenSpawn: 1.5
+      wavePosition: {fileID: 151139380}
     RoundBeginDelay: 1
 --- !u!114 &261434643
 MonoBehaviour:
@@ -486,7 +496,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1804837485}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.77}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1998458984}
@@ -546,7 +556,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1933034217}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1846546384}
