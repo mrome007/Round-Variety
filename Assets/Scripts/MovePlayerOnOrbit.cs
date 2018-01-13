@@ -74,7 +74,7 @@ public class MovePlayerOnOrbit : MonoBehaviour
 
         if(ver > 0f)
         {
-            if(horizontalRadius < 3f * radius)
+            if(horizontalRadius < 2.5f * radius)
             {
                 horizontalRadius += 0.1f;
             }

@@ -183,23 +183,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WaveRounds:
-  - Name: Round 1 - Kamikazes
+  - Name: Round 1 - Basic
     EnemyWaves:
     - EnemyType: 0
-      NumberOfEnemies: 5
+      NumberOfEnemies: 1
       WaveDelay: 0
       TimeBetweenSpawn: 1.5
       wavePosition: {fileID: 1846546384}
-    - EnemyType: 0
-      NumberOfEnemies: 7
-      WaveDelay: 4
-      TimeBetweenSpawn: 1
-      wavePosition: {fileID: 993887510}
-    - EnemyType: 0
-      NumberOfEnemies: 9
-      WaveDelay: 3
-      TimeBetweenSpawn: 1.25
-      wavePosition: {fileID: 151139380}
     RoundBeginDelay: 1
 --- !u!114 &261434643
 MonoBehaviour:
@@ -466,6 +456,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b3e63f48c40c84a6b9841106c272d21a, type: 3}
+      propertyPath: m_TagString
+      value: World
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9500000, guid: b3e63f48c40c84a6b9841106c272d21a, type: 3}
   m_ParentPrefab: {fileID: 100100000, guid: b3e63f48c40c84a6b9841106c272d21a, type: 3}
@@ -590,7 +584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4ee3ac16edef4b92ad7b499f3dc4302, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 4
+  radius: 5
   sizeOffset: 1
   speed: 3
   idleSpeed: 20

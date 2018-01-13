@@ -88,8 +88,8 @@ public class EnemyWaveController : MonoBehaviour
 
 public enum EnemyType
 {
-    Kamikaze = 0,
-    UFO = 1
+    Basic = 0,
+    Drill = 1
 }
 
 [Serializable]
