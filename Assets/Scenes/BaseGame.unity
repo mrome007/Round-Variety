@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43816468, g: 0.48617232, b: 0.5664503, a: 1}
+  m_IndirectSpecularColor: {r: 0.4400173, g: 0.48851, b: 0.56870496, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -135,7 +135,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 151139379}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10, y: -7, z: 0}
+  m_LocalPosition: {x: 10, y: -8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1933034218}
@@ -236,7 +236,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 993887509}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10, y: -7, z: 0}
+  m_LocalPosition: {x: -10, y: -8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1933034218}
@@ -300,13 +300,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1078764715}
-  m_LocalRotation: {x: 0.6181341, y: 0, z: 0, w: 0.78607273}
+  m_LocalRotation: {x: 0.5588497, y: -0.14018987, z: 0.09653006, w: 0.81161314}
   m_LocalPosition: {x: 0, y: 16.42, z: -9.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 76.36, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 69.1, y: -19.6, z: 0}
 --- !u!1 &1205207524
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,7 +358,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 1
+  orthographic: 0
   orthographic size: 8
   m_Depth: -1
   m_CullingMask:
@@ -535,7 +535,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1846546383}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -7, z: 0}
+  m_LocalPosition: {x: -8, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1933034218}
@@ -669,19 +669,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: feaa9e482504843f3a6e1d0ac7c73ef9, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.5
+      value: -0.270598
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: feaa9e482504843f3a6e1d0ac7c73ef9, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.5
+      value: -0.2705981
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: feaa9e482504843f3a6e1d0ac7c73ef9, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.5
+      value: 0.6532814
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: feaa9e482504843f3a6e1d0ac7c73ef9, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.5
+      value: 0.6532816
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: feaa9e482504843f3a6e1d0ac7c73ef9, type: 3}
       propertyPath: m_RootOrder
@@ -689,12 +689,24 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: feaa9e482504843f3a6e1d0ac7c73ef9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: feaa9e482504843f3a6e1d0ac7c73ef9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d2a3d75b440b4441882305874aa92d0e, type: 2}
+    - target: {fileID: 400000, guid: feaa9e482504843f3a6e1d0ac7c73ef9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -45
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: feaa9e482504843f3a6e1d0ac7c73ef9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 89.99999
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: feaa9e482504843f3a6e1d0ac7c73ef9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9500000, guid: feaa9e482504843f3a6e1d0ac7c73ef9, type: 3}
   m_ParentPrefab: {fileID: 100100000, guid: feaa9e482504843f3a6e1d0ac7c73ef9, type: 3}
