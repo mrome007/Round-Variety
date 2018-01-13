@@ -25,11 +25,15 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private List<Enemy> enemyObjects;
 
+    private float positionOffset = 5f;
+
     public IEnumerable<Enemy> SpawnEnemy(int numberOfEnemies, EnemyType enemyType, Vector3 position, Quaternion rotation)
     {
         for(int index = 0; index < numberOfEnemies; index++)
         {
-            var enemy = Instantiate(enemyObjects[(int)enemyType], position, rotation);
+            var newPosition = position;
+            newPosition.x = Random.Range(position.x - positionOffset, position.x + positionOffset);
+            var enemy = Instantiate(enemyObjects[(int)enemyType], newPosition, rotation);
             yield return enemy;
         }
     }

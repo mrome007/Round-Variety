@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyObjects:
-  - {fileID: 114551114042251822, guid: 155319b21d5474659b076f77e242dae7, type: 2}
+  - {fileID: 114631755784007568, guid: 434359dc5135e422c8dd153f988b3569, type: 2}
 --- !u!1 &993887509
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,17 +392,6 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: b3e63f48c40c84a6b9841106c272d21a, type: 3}
   m_PrefabInternal: {fileID: 1647202091}
---- !u!114 &1440014107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1440014106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f5914e0c8e93426a8533c57d7c74258, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &1440014108
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -669,19 +658,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: feaa9e482504843f3a6e1d0ac7c73ef9, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.270598
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: feaa9e482504843f3a6e1d0ac7c73ef9, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.2705981
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: feaa9e482504843f3a6e1d0ac7c73ef9, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.6532814
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: feaa9e482504843f3a6e1d0ac7c73ef9, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.6532816
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: feaa9e482504843f3a6e1d0ac7c73ef9, type: 3}
       propertyPath: m_RootOrder
@@ -697,11 +686,11 @@ Prefab:
       objectReference: {fileID: 2100000, guid: d2a3d75b440b4441882305874aa92d0e, type: 2}
     - target: {fileID: 400000, guid: feaa9e482504843f3a6e1d0ac7c73ef9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -45
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: feaa9e482504843f3a6e1d0ac7c73ef9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 89.99999
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: feaa9e482504843f3a6e1d0ac7c73ef9, type: 3}
       propertyPath: m_IsActive
