@@ -8,6 +8,7 @@ public class BasicEnemy : Enemy
     {
         if(other.tag == "Projectile")
         {
+            World.Instance.PlayHitMarkter();
             var projectile = other.GetComponent<Projectile>();
             if(projectile != null)
             {

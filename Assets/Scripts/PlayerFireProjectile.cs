@@ -13,6 +13,9 @@ public class PlayerFireProjectile : MonoBehaviour
     [SerializeField]
     private float fireRate = 0.5f;
 
+    [SerializeField]
+    private AudioSource projectileAudio;
+
     private float fireTimer;
 
     private void Start()
@@ -33,6 +36,7 @@ public class PlayerFireProjectile : MonoBehaviour
         if(Input.GetMouseButtonDown(0))
         {
             fireTimer = fireRate;
+            projectileAudio.Play();
             Instantiate(projectileObject, projectileFireTransform.position, projectileFireTransform.rotation);
         }
     }

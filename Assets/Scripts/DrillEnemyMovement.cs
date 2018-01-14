@@ -13,7 +13,7 @@ public class DrillEnemyMovement : EnemyMovement
     private float currentRotation;
     private float towardsTimer = 3f;
     private Vector3 originalPosition;
-    private float inTimer = 6f;
+    private float inTimer = 5.35f;
     private Vector3 drillRotation;
     private float outTimer = 3f;
 
@@ -53,6 +53,8 @@ public class DrillEnemyMovement : EnemyMovement
         if(inTimer <= 0f)
         {
             moveType = MoveType.Damage;
+            enemyCollider.enabled = false;
+            inTimer = 5.35f;
         }
     }
 

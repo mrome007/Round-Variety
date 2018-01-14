@@ -72,6 +72,7 @@ public class BasicEnemyMovement : EnemyMovement
 
     protected override void Damage()
     {
+        enemyCollider.enabled = false;
         World.Instance.DamageWorld(EnemyType.Basic);
         moveType = MoveType.Done;
     }

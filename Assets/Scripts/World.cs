@@ -6,6 +6,9 @@ public class World : MonoBehaviour
 {
     public int Health = 1000;
 
+    [SerializeField]
+    private AudioSource hit;
+
     #region Instance
     
     public static World Instance
@@ -47,5 +50,10 @@ public class World : MonoBehaviour
             //End Game;
             StartGame.StartTheGame();
         }
+    }
+
+    public void PlayHitMarkter()
+    {
+        hit.Play();
     }
 }
