@@ -34,7 +34,7 @@ public class World : MonoBehaviour
                 break;
 
             case EnemyType.Drill:
-                damage = 50;
+                damage = 25;
                 break;
 
             default:

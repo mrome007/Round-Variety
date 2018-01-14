@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\BasicEnemy.cs" />
      <Compile Include="Assets\Scripts\BasicEnemyMovement.cs" />
      <Compile Include="Assets\Scripts\DamageCollision.cs" />
+     <Compile Include="Assets\Scripts\DrillEnemyMovement.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\EnemyDeathEventArgs.cs" />
      <Compile Include="Assets\Scripts\EnemyMovement.cs" />

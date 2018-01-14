@@ -102,6 +102,7 @@ public class BasicEnemyMovement : EnemyMovement
                 if(burrowToOutHits <= 0)
                 {
                     moveType = MoveType.Out;
+                    outTimer = 4f;
                     enemyCollider.enabled = false;
                 }
             }

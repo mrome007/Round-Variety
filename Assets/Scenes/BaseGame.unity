@@ -43,7 +43,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -89,7 +89,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000002, guid: 7abfd69647a7347358c20bbd00f1918b,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -530,21 +531,11 @@ MonoBehaviour:
   WaveRounds:
   - Name: Round 1 - Basic
     EnemyWaves:
-    - EnemyType: 0
+    - EnemyType: 1
       NumberOfEnemies: 5
       WaveDelay: 0
       TimeBetweenSpawn: 1.5
       wavePosition: {fileID: 1846546384}
-    - EnemyType: 0
-      NumberOfEnemies: 6
-      WaveDelay: 5
-      TimeBetweenSpawn: 1.5
-      wavePosition: {fileID: 993887510}
-    - EnemyType: 0
-      NumberOfEnemies: 8
-      WaveDelay: 7
-      TimeBetweenSpawn: 1.5
-      wavePosition: {fileID: 151139380}
     RoundBeginDelay: 1
   worldTransform: {fileID: 1440014111}
 --- !u!114 &261434643
@@ -560,6 +551,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyObjects:
   - {fileID: 114631755784007568, guid: 434359dc5135e422c8dd153f988b3569, type: 2}
+  - {fileID: 114184519352908910, guid: abc6db30103ac4bb2bbb184253f719b9, type: 2}
 --- !u!1001 &428348420
 Prefab:
   m_ObjectHideFlags: 0
