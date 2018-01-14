@@ -192,7 +192,7 @@ MonoBehaviour:
       wavePosition: {fileID: 1846546384}
     - EnemyType: 0
       NumberOfEnemies: 6
-      WaveDelay: 6
+      WaveDelay: 5
       TimeBetweenSpawn: 1.5
       wavePosition: {fileID: 993887510}
     - EnemyType: 0
@@ -597,7 +597,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 5
-  sizeOffset: 1
+  sizeOffset: 1.25
   speed: 3
   idleSpeed: 20
   idleIncrment: 0.05
@@ -642,7 +642,7 @@ MonoBehaviour:
   projectileFireTransform: {fileID: 1804837486}
   projectileObject: {fileID: 114368956886767818, guid: 35472eaabc4654aa3a79376e6f35a14e,
     type: 2}
-  fireRate: 0.15
+  fireRate: 0.1
 --- !u!54 &1998458987
 Rigidbody:
   m_ObjectHideFlags: 0

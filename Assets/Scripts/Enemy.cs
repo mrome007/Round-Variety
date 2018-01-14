@@ -5,6 +5,8 @@ using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour
 {
+    public float Health;
+
     public event EventHandler EnemySpawned;
     public event EventHandler<EnemyDeathEventArgs> EnemyDeath;
 

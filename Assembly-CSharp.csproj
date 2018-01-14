@@ -51,12 +51,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\EnemyMovement.cs" />
      <Compile Include="Assets\Scripts\BasicEnemy.cs" />
      <Compile Include="Assets\Scripts\BasicEnemyMovement.cs" />
      <Compile Include="Assets\Scripts\DamageCollision.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\EnemyDeathEventArgs.cs" />
+     <Compile Include="Assets\Scripts\EnemyMovement.cs" />
      <Compile Include="Assets\Scripts\EnemySpawner.cs" />
      <Compile Include="Assets\Scripts\EnemyWaveController.cs" />
      <Compile Include="Assets\Scripts\MovePlayerOnOrbit.cs" />

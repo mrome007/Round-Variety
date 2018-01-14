@@ -33,7 +33,7 @@ public class BasicEnemyMovement : EnemyMovement
         transform.LookAt(Vector3.zero);
         position = Vector3.zero;
         burrowRadius = radius;
-        inTimer = Random.Range(1f, 3f);
+        inTimer = 2f;
         outTimer = 2f;
         burrowedRadius = burrowRadius - burrowOffset;
     }
@@ -76,6 +76,7 @@ public class BasicEnemyMovement : EnemyMovement
         {
             moveType = MoveType.In;
             theta = GetAngleBetweenPos();
+            inTimer = Random.Range(1f, 3f);
             direction = Random.Range(0,2) == 0 ? 1f : -1f;
         }
         
