@@ -70,6 +70,12 @@ public class BasicEnemyMovement : EnemyMovement
         transform.position += transform.forward * moveSpeed * Time.deltaTime;
     }
 
+    protected override void Damage()
+    {
+        World.Instance.DamageWorld(EnemyType.Basic);
+        moveType = MoveType.Done;
+    }
+
     protected override void OnTriggerEnter(Collider other)
     {
         if(other.tag == "World")
@@ -126,6 +132,9 @@ public class BasicEnemyMovement : EnemyMovement
         burrowRadius -= Time.deltaTime * 0.1f;  
         if(burrowRadius <= burrowedRadius)
         {
+            //Damage the world here.
+            enemyCollider.enabled = false;
+            moveType = MoveType.Damage;
             return;
         }
 

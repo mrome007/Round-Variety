@@ -11,7 +11,9 @@ public class EnemyMovement : MonoBehaviour
     {
         Towards,
         In,
-        Out
+        Out,
+        Damage,
+        Done
     }
 
     protected MoveType moveType;
@@ -48,6 +50,13 @@ public class EnemyMovement : MonoBehaviour
                 MoveTowards();
                 break;
 
+            case MoveType.Damage:
+                Damage();
+                break;
+            
+            case MoveType.Done:
+                MoveToDone();
+                break;
             default:
                 break;
         }
@@ -66,6 +75,16 @@ public class EnemyMovement : MonoBehaviour
     protected virtual void MoveTowards()
     {
         
+    }
+
+    protected virtual void Damage()
+    {
+
+    }
+
+    protected virtual void MoveToDone()
+    {
+
     }
 
     protected virtual void OnTriggerEnter(Collider other)

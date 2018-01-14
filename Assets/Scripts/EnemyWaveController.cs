@@ -9,6 +9,9 @@ public class EnemyWaveController : MonoBehaviour
     [SerializeField]
     private List<WaveRound> WaveRounds;
 
+    [SerializeField]
+    private Transform worldTransform;
+
     private Dictionary<int, Enemy> enemiesInWave;
     private static int enemyIdCounter;
     private int enemyInRoundCount;
@@ -23,6 +26,11 @@ public class EnemyWaveController : MonoBehaviour
     }
 
     private void Start()
+    {
+        //StartEnemies(WaveRounds[currentRound++]);
+    }
+
+    public void StartRound()
     {
         StartEnemies(WaveRounds[currentRound++]);
     }
@@ -55,6 +63,7 @@ public class EnemyWaveController : MonoBehaviour
         var enemies = EnemySpawner.Instance.SpawnEnemy(wave.NumberOfEnemies, wave.EnemyType, wave.wavePosition.position, Quaternion.identity);
         foreach(var enemy in enemies)
         {
+            enemy.transform.parent = worldTransform;
             enemy.EnemyId = enemyIdCounter;
             enemiesInWave.Add(enemyIdCounter++, enemy);
             enemy.EnemyDeath += HandleEnemyDeath;
