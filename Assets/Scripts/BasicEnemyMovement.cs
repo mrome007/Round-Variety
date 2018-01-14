@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,10 +16,14 @@ public class BasicEnemyMovement : EnemyMovement
     [SerializeField]
     private float inIncrement = 0.15f;
 
+    [SerializeField]
+    private int burrowToOutHits;
+
     private float theta;
     private float direction;
     private Vector3 position;
     private float inTimer;
+    private float outTimer;
     private float burrowRadius;
     private float burrowedRadius;
 
@@ -30,6 +34,7 @@ public class BasicEnemyMovement : EnemyMovement
         position = Vector3.zero;
         burrowRadius = radius;
         inTimer = Random.Range(1f, 3f);
+        outTimer = 2f;
         burrowedRadius = burrowRadius - burrowOffset;
     }
 
@@ -44,6 +49,20 @@ public class BasicEnemyMovement : EnemyMovement
         {
             BasicMoveInBurrow();
         }
+    }
+
+    protected override void MoveOut()
+    {
+        outTimer -= Time.deltaTime;
+        if(outTimer <= 0f)
+        {
+            outTimer = 2f;
+            moveType = MoveType.Towards;
+            transform.LookAt(Vector3.zero);
+            enemyCollider.enabled = true;
+        }
+        transform.position += transform.up * moveSpeed * Time.deltaTime;
+        transform.Rotate(Vector3.up * 20f * Time.deltaTime);
     }
 
     protected override void MoveTowards()
@@ -63,6 +82,27 @@ public class BasicEnemyMovement : EnemyMovement
         if(other.tag == "Player")
         {
             moveType = MoveType.Out;
+            enemyCollider.enabled = false;
+        }
+
+        if(other.tag == "Projectile")
+        {
+            Destroy(other.gameObject);
+
+            if(moveType == MoveType.In)
+            {
+                burrowToOutHits--;
+                if(burrowToOutHits <= 0)
+                {
+                    moveType = MoveType.Out;
+                    enemyCollider.enabled = false;
+                }
+            }
+            else
+            {
+                moveType = MoveType.Out;
+                enemyCollider.enabled = false;
+            }
         }
     }
 
@@ -88,8 +128,9 @@ public class BasicEnemyMovement : EnemyMovement
             return;
         }
 
-        var x = (burrowRadius + offset) * Mathf.Cos(theta);
-        var y = (burrowRadius + offset) * Mathf.Sin(theta);
+        var randomOffset = Random.Range(-0.01f, 0.01f);
+        var x = (burrowRadius + offset) * Mathf.Cos(theta + randomOffset);
+        var y = (burrowRadius + offset) * Mathf.Sin(theta + randomOffset);
         
         position.x = x;
         position.y = y;
