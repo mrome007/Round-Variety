@@ -9,6 +9,9 @@ public class World : MonoBehaviour
     [SerializeField]
     private AudioSource hit;
 
+    [SerializeField]
+    private Renderer renderer;
+
     #region Instance
     
     public static World Instance
@@ -45,6 +48,9 @@ public class World : MonoBehaviour
         }
 
         Health -= damage;
+        var color = renderer.material.color;
+        color.r = 1f -  (Health / 1000f);
+        renderer.material.color = color;
         if(Health <= 0)
         {
             //End Game;

@@ -31,7 +31,7 @@ public class EnemyWaveController : MonoBehaviour
 
     public void StartRound()
     {
-        StartEnemies(WaveRounds[currentRound++]);
+        StartEnemies(WaveRounds[currentRound]);
     }
 
     private void StartEnemies(WaveRound round)
