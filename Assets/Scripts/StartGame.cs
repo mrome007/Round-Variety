@@ -57,5 +57,12 @@ public class StartGame : MonoBehaviour
                 StartRound();
             }
         }
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            start = false;
+            HideStartGameElements();
+            StartRound();
+        }
     }
 }

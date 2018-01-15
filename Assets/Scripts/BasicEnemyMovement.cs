@@ -74,6 +74,8 @@ public class BasicEnemyMovement : EnemyMovement
     {
         enemyCollider.enabled = false;
         World.Instance.DamageWorld(EnemyType.Basic);
+        var enemy = GetComponent<Enemy>();
+        enemy.KillEnemy();
         moveType = MoveType.Done;
     }
 

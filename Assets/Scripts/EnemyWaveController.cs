@@ -27,7 +27,6 @@ public class EnemyWaveController : MonoBehaviour
 
     private void Start()
     {
-        //StartEnemies(WaveRounds[currentRound++]);
     }
 
     public void StartRound()
@@ -89,6 +88,10 @@ public class EnemyWaveController : MonoBehaviour
                 StartEnemies(WaveRounds[currentRound]);
                 enemyIdCounter = 0;
                 enemiesInWave.Clear();
+            }
+            else
+            {
+                StartGame.StartTheGame();
             }
         }
     }

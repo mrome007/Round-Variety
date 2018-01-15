@@ -75,7 +75,13 @@ public class DrillEnemyMovement : EnemyMovement
 
     protected override void Damage()
     {
-        World.Instance.DamageWorld(EnemyType.Drill);
+        enemyCollider.enabled = false;
+        var enemy = GetComponent<Enemy>();
+        if(enemy.Health > 0f)
+        {
+            World.Instance.DamageWorld(EnemyType.Drill);
+        }
+        enemy.KillEnemy();
         moveType = MoveType.Done;
     }
 
